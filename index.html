@@ -27,8 +27,10 @@
             border-color: rgb(25,25,25);
              color: white;
         }
-        id.dias {
-            max-width: 10px:
+        #dias {
+            max-width: 30px;
+            height: 20px;
+            text-align: center;
         }
     </style>
 </head>
@@ -38,6 +40,7 @@
     <label for="fecha">Introduce una fecha:</label>
     <br>
     <input type="date" id="fecha">
+    <br>
     <br>
     <label for="dia">Introduce el número de días a sumar:</label>
     <br>
@@ -55,7 +58,7 @@
             const diasInput = parseInt(document.getElementById("dias").value);
             const fecha = new Date(fechaInput);
             fecha.setDate(fecha.getDate() + diasInput);
-            const resultado = fecha.toDateString();
+            const resultado = fecha.toLocaleDateString('es-mx', { weekday:'long', day:'numeric', month:'long', year:'numeric'});
             document.getElementById("resultado").textContent = `La fecha resultante es: ${resultado}`;
         }
     </script>
