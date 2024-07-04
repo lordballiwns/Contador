@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-mx">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,13 +24,18 @@
         }
         button {
             background: rgb(10,10,10);
-            border-color: rgb(25,25,25);
+            border-color: rgb(100,0,100);
              color: white;
+             padding: 5px;
+             border-radius: 5px;
         }
         #dias {
             max-width: 30px;
             height: 20px;
             text-align: center;
+        }
+        #resultado {
+            color: rgb(0,200,200);
         }
     </style>
 </head>
@@ -50,6 +55,7 @@
     <button onclick="calcularDias()">Calcular</button>
     <br>
     <br>
+    <div>Su evento es el: </div>
     <p id="resultado"></p>
 
     <script>
@@ -59,7 +65,7 @@
             const fecha = new Date(fechaInput);
             fecha.setDate(fecha.getDate() + diasInput);
             const resultado = fecha.toLocaleDateString('es-mx', { weekday:'long', day:'numeric', month:'long', year:'numeric'});
-            document.getElementById("resultado").textContent = `La fecha resultante es: ${resultado}`;
+            document.getElementById("resultado").textContent = `${resultado}`;
         }
     </script>
 </body>
